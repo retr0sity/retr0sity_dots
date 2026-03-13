@@ -17,9 +17,7 @@
 - **Catppuccin Mocha** color palette across all components
 - Minimal, clean aesthetic — no bloat
 - Vim-style keybindings throughout
-- Dev & sysadmin / CTF focused workflow
 - Single 1080p monitor optimized
-- Master layout with 50/50 split
 
 ## 🧩 Components
 
@@ -144,9 +142,9 @@ cp kitty/*    ~/.config/kitty/
 cp wofi/*     ~/.config/wofi/
 cp wlogout/*  ~/.config/wlogout/
 ```
-3. Replace `hotzas` with your username in the configs:
+3. Replace `user` with your username in the configs:
 ```bash
-sed -i "s|/home/hotzas|/home/$USER|g" \
+sed -i "s|/home/user|/home/$USER|g" \
     ~/.config/hypr/hyprland.conf \
     ~/.config/hypr/hyprpaper.conf
 ```
@@ -246,9 +244,8 @@ monitor=HDMI-A-1,1920x1080@60,1920x0,1
 ## 📝 Notes
 
 - Tested on **Arch Linux** with an AMD Renoir APU
-- Flatpak apps (Discord, Spotify) use standard Flatpak app IDs — adjust if yours differ
-- Battery management via `tlp` recommended for laptops
-- GTK dark mode enforced via `gsettings` and environment variables
+- I used Flatpak apps (Discord, Spotify) which use standard Flatpak app IDs. Adjust if yours differ
+- Dark mode must be set on your own, depends on your set up
 - Firefox dark mode must be set manually via `about:addons → Themes → Dark`
 
 ## 📄 License
