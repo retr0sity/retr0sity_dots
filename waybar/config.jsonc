@@ -1,0 +1,139 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 4,
+    "margin-top": 6,
+    "margin-left": 10,
+    "margin-right": 10,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    // ── Workspaces ──────────────────────────────────────────────
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "①",
+            "2": "②",
+            "3": "③",
+            "4": "④",
+            "5": "⑤",
+            "6": "⑥",
+            "7": "⑦",
+            "8": "⑧",
+            "9": "⑨",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        },
+        "on-click": "activate"
+    },
+
+    // ── Active window ────────────────────────────────────────────
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50,
+        "separate-outputs": true
+    },
+
+    // ── Clock ────────────────────────────────────────────────────
+    "clock": {
+        "format": " {:%a %d %b  %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 60
+    },
+
+    // ── CPU ──────────────────────────────────────────────────────
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 3,
+        "tooltip": true
+    },
+
+    // ── Memory ───────────────────────────────────────────────────
+    "memory": {
+        "format": " {used:0.1f}G",
+        "interval": 5,
+        "tooltip-format": "Used: {used:0.2f}G / {total:0.2f}G"
+    },
+
+    // ── Temperature ──────────────────────────────────────────────
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    // ── Network ──────────────────────────────────────────────────
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": " {ipaddr}",
+        "format-linked": " (No IP)",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\nGateway: {gwaddr}\nUp: {bandwidthUpBytes}  Down: {bandwidthDownBytes}",
+        "interval": 5,
+        "on-click": "kitty -e nmtui"
+    },
+
+    // ── Audio ────────────────────────────────────────────────────
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+
+    // ── Battery (remove if desktop) ──────────────────────────────
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{timeTo}\nCycles: {cycles}"
+    },
+
+    // ── System tray ──────────────────────────────────────────────
+    "tray": {
+        "spacing": 8,
+        "icon-size": 16
+    },
+
+    // ── Power button ─────────────────────────────────────────────
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css --buttons-per-row 3 --column-spacing 10 --row-spacing 10 --margin-top 300 --margin-bottom 300 --margin-left 400 --margin-right 400"
+    }
+}

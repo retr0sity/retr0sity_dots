@@ -1,0 +1,179 @@
+/* ── Waybar — Minimal Dark (Catppuccin Mocha palette) ──────────── */
+
+/* Palette reference:
+   base    #1e1e2e
+   mantle  #181825
+   surface0 #313244
+   overlay0 #6c7086
+   text    #cdd6f4
+   blue    #89b4fa
+   green   #a6e3a1
+   yellow  #f9e2af
+   red     #f38ba8
+   peach   #fab387
+*/
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.85);   /* base with slight transparency */
+    color: #cdd6f4;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* ── Workspaces ─────────────────────────────────────────────────── */
+#workspaces {
+    background: transparent;
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: #6c7086;
+    background: transparent;
+    padding: 0 6px;
+    min-width: 18px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(137, 180, 250, 0.15);
+    color: #cdd6f4;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+    background: rgba(137, 180, 250, 0.2);
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.2);
+}
+
+/* ── Active window title ─────────────────────────────────────────── */
+#window {
+    color: #6c7086;
+    padding: 0 8px;
+    font-style: italic;
+}
+
+/* ── Clock ───────────────────────────────────────────────────────── */
+#clock {
+    color: #cdd6f4;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* ── Shared right-side module style ─────────────────────────────── */
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#custom-power {
+    padding: 0 10px;
+    color: #cdd6f4;
+}
+
+/* ── Per-module accent colors ────────────────────────────────────── */
+#cpu {
+    color: #89b4fa;
+}
+
+#memory {
+    color: #a6e3a1;
+}
+
+#temperature {
+    color: #f9e2af;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+    animation: blink 1s linear infinite;
+}
+
+#network {
+    color: #89dceb;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#pulseaudio {
+    color: #cba6f7;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.warning {
+    color: #f9e2af;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#tray {
+    padding: 0 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background: rgba(243, 139, 168, 0.2);
+}
+
+#custom-power {
+    color: #f38ba8;
+    font-size: 15px;
+    padding: 0 12px 0 6px;
+}
+
+#custom-power:hover {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.15);
+    border-radius: 6px;
+}
+
+/* ── Blink animation (for critical states) ───────────────────────── */
+@keyframes blink {
+    to {
+        color: #f38ba8;
+        background-color: rgba(243, 139, 168, 0.2);
+    }
+}
+
+/* ── Tooltip ─────────────────────────────────────────────────────── */
+tooltip {
+    background: #181825;
+    color: #cdd6f4;
+    border-radius: 6px;
+    border: 1px solid #313244;
+    font-size: 12px;
+}

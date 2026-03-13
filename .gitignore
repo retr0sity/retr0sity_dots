@@ -1,0 +1,4 @@
+# Don't commit personal paths or secrets
+*.log
+*.bak
+.DS_Store
