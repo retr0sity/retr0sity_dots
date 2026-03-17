@@ -17,7 +17,9 @@
 - **Catppuccin Mocha** color palette across all components
 - Minimal, clean aesthetic — no bloat
 - Vim-style keybindings throughout
+- Dev & sysadmin / CTF focused workflow
 - Single 1080p monitor optimized
+- Master layout with 50/50 split
 
 ## 🧩 Components
 
@@ -35,6 +37,7 @@
 | Bluetooth | `blueman` |
 | Screenshots | `grimblast` |
 | Clipboard | `cliphist` + `wl-clipboard` |
+| Network TUI | `nmtui` (via `nmtui-dark` wrapper) |
 | Brightness OSD | `brightnessctl` + `swayosd` |
 | Auth Agent | `polkit-gnome` |
 
@@ -144,9 +147,9 @@ cp kitty/*    ~/.config/kitty/
 cp wofi/*     ~/.config/wofi/
 cp wlogout/*  ~/.config/wlogout/
 ```
-3. Replace `user` with your username in the configs:
+3. Replace `hotzas` with your username in the configs:
 ```bash
-sed -i "s|/home/user|/home/$USER|g" \
+sed -i "s|/home/hotzas|/home/$USER|g" \
     ~/.config/hypr/hyprland.conf \
     ~/.config/hypr/hyprpaper.conf
 ```
@@ -248,9 +251,12 @@ monitor=HDMI-A-1,1920x1080@60,1920x0,1
 ## 📝 Notes
 
 - Tested on **Arch Linux** with an AMD Renoir APU
-- I used Flatpak apps (Discord, Spotify) which use standard Flatpak app IDs. Adjust if yours differ
-- Dark mode must be set on your own, depends on your set up
+- Flatpak apps (Discord, Spotify) use standard Flatpak app IDs — adjust if yours differ
+- Battery management via `tlp` recommended for laptops
+- GTK dark mode enforced via `gsettings` and environment variables
 - Firefox dark mode must be set manually via `about:addons → Themes → Dark`
+- `nmtui-dark` is a wrapper script installed to `~~/.local/bin/` — it launches nmtui with better contrast
+- Wallpaper is set via `swaybg` — place your image at `~/Pictures/wall.png` or update the path in `hyprland.conf`
 
 ## 📄 License
 

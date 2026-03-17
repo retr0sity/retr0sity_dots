@@ -90,3 +90,15 @@ mkdir -p "$HOME/Pictures"
 echo ""
 echo -e "${GREEN}  Done! Log into Hyprland from your display manager.${NC}"
 echo ""
+
+# ── nmtui-dark wrapper ────────────────────────────────────────────
+print_step "Installing nmtui-dark wrapper..."
+mkdir -p "$HOME/.local/bin"
+cat > "$HOME/.local/bin/nmtui-dark" << 'NMTUIEOF'
+#!/bin/bash
+TERM=xterm-256color nmtui
+NMTUIEOF
+chmod +x "$HOME/.local/bin/nmtui-dark"
+grep -q "local/bin" "$HOME/.zshrc" 2>/dev/null || echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.zshrc"
+grep -q "local/bin" "$HOME/.bashrc" 2>/dev/null || echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
+print_ok "nmtui-dark installed"
