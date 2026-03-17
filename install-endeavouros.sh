@@ -49,11 +49,11 @@ sudo pacman -Syu --needed --noconfirm \
     wl-clipboard cliphist grim slurp polkit-gnome playerctl \
     ttf-jetbrains-mono-nerd noto-fonts noto-fonts-emoji \
     papirus-icon-theme blueman network-manager-applet \
-    qt6ct kvantum tlp dolphin firefox
+    qt6ct kvantum tlp dolphin firefox brightnessctl
 print_ok "Pacman packages installed"
 
 print_step "Installing AUR packages..."
-$AUR_HELPER -S --needed --noconfirm grimblast-git bibata-cursor-theme wlogout
+$AUR_HELPER -S --needed --noconfirm grimblast-git bibata-cursor-theme wlogout swayosd-git swayosd-git
 print_ok "AUR packages installed"
 
 # ── Services ──────────────────────────────────────────────────────

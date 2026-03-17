@@ -63,7 +63,8 @@ sudo dnf install -y \
     kvantum \
     tlp \
     dolphin \
-    firefox
+    firefox \
+    brightnessctl
 
 print_ok "Packages installed"
 

@@ -35,6 +35,7 @@
 | Bluetooth | `blueman` |
 | Screenshots | `grimblast` |
 | Clipboard | `cliphist` + `wl-clipboard` |
+| Brightness OSD | `brightnessctl` + `swayosd` |
 | Auth Agent | `polkit-gnome` |
 
 ---
@@ -75,7 +76,8 @@ hyprland swaybg xdg-desktop-portal-hyprland
 waybar dunst kitty wofi wlogout grimblast
 pipewire pipewire-pulse wireplumber pavucontrol
 wl-clipboard cliphist grim slurp
-polkit-gnome playerctl
+brightnessctl swayosd
+polkit-gnome playerctl brightnessctl brightnessctl
 JetBrainsMono Nerd Font noto-fonts
 papirus-icon-theme
 ```
@@ -183,6 +185,8 @@ nano ~/.config/hypr/hyprland.conf  # update monitor= line
 | `Super + M` | Spotify |
 | `Super + Shift + B` | Bluetooth manager |
 | `Super + Shift + S` | Screenshot region |
+| `F2` | Brightness down |
+| `F3` | Brightness up |
 | `Super + V` | Clipboard history |
 
 ### Window Focus (vim keys)

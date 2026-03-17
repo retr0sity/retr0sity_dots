@@ -34,8 +34,8 @@ pamac install --no-confirm \
     wl-clipboard cliphist grim slurp polkit-gnome playerctl \
     ttf-jetbrains-mono-nerd noto-fonts noto-fonts-emoji \
     papirus-icon-theme blueman network-manager-applet \
-    qt6ct kvantum tlp dolphin firefox \
-    grimblast-git bibata-cursor-theme wlogout 2>/dev/null || \
+    qt6ct kvantum tlp dolphin firefox brightnessctl \
+    grimblast-git bibata-cursor-theme wlogout swayosd-git swayosd-git 2>/dev/null || \
 sudo pacman -Syu --needed --noconfirm \
     hyprland swaybg xdg-desktop-portal-hyprland \
     qt5-wayland qt6-wayland waybar dunst libnotify kitty wofi \

@@ -87,6 +87,10 @@ window#waybar {
 }
 
 /* ── Per-module accent colors ────────────────────────────────────── */
+#backlight {
+    color: #f9e2af;
+}
+
 #cpu {
     color: #89b4fa;
 }

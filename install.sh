@@ -95,7 +95,8 @@ PACMAN_PKGS=(
     kvantum
     tlp
     dolphin
-    firefox
+    firefox \
+    brightnessctl
 )
 
 sudo pacman -Syu --needed --noconfirm "${PACMAN_PKGS[@]}"

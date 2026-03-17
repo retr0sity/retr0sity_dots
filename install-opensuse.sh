@@ -64,7 +64,8 @@ sudo zypper install -y \
     kvantum-qt6 \
     tlp \
     dolphin \
-    firefox
+    firefox \
+    brightnessctl
 
 print_ok "Packages installed"
 
@@ -76,6 +77,18 @@ if ! command -v wlogout &>/dev/null; then
     cd /tmp/wlogout && cmake -B build && cmake --build build
     sudo cmake --install build && cd -
     print_ok "wlogout installed"
+fi
+
+# ── swayosd from source ──────────────────────────────────────────────
+print_step "Building swayosd..."
+if ! command -v swayosd-server &>/dev/null; then
+    sudo zypper install -y gtk4-devel libadwaita-devel wayland-devel git cargo
+    git clone https://github.com/ErikReider/SwayOSD.git /tmp/swayosd
+    cd /tmp/swayosd && cargo build --release
+    sudo install -m755 target/release/swayosd-server /usr/local/bin/
+    sudo install -m755 target/release/swayosd-client /usr/local/bin/
+    cd -
+    print_ok "swayosd installed"
 fi
 
 # ── grimblast ─────────────────────────────────────────────────────

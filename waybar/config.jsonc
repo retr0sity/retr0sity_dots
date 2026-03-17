@@ -16,6 +16,7 @@
     ],
     "modules-right": [
         "pulseaudio",
+        "backlight",
         "network",
         "cpu",
         "memory",
@@ -92,6 +93,17 @@
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}\nGateway: {gwaddr}\nUp: {bandwidthUpBytes}  Down: {bandwidthDownBytes}",
         "interval": 5,
         "on-click": "kitty -e nmtui"
+    },
+
+    // ── Backlight ─────────────────────────────────────────────────
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "device": "amdgpu_bl1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "scroll-step": 5,
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-"
     },
 
     // ── Audio ────────────────────────────────────────────────────
