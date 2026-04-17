@@ -1,28 +1,15 @@
-/* ── Waybar — Minimal Dark (Catppuccin Mocha palette) ──────────── */
-
-/* Palette reference:
-   base    #1e1e2e
-   mantle  #181825
-   surface0 #313244
-   overlay0 #6c7086
-   text    #cdd6f4
-   blue    #89b4fa
-   green   #a6e3a1
-   yellow  #f9e2af
-   red     #f38ba8
-   peach   #fab387
-*/
+/* ── Waybar — Minimal Dark (Catppuccin Mocha) ──────────────────── */
 
 * {
     font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
-    font-size: 13px;
+    font-size: 12px;
     border: none;
     border-radius: 0;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(30, 30, 46, 0.85);   /* base with slight transparency */
+    background-color: rgba(30, 30, 46, 0.85);
     color: #cdd6f4;
     border-radius: 10px;
     transition: background-color 0.3s ease;
@@ -79,18 +66,17 @@ window#waybar {
 #temperature,
 #network,
 #pulseaudio,
+#backlight,
 #battery,
 #tray,
 #custom-power {
     padding: 0 10px;
     color: #cdd6f4;
+    font-size: 11px;
+    letter-spacing: 0.5px;
 }
 
 /* ── Per-module accent colors ────────────────────────────────────── */
-#backlight {
-    color: #f9e2af;
-}
-
 #cpu {
     color: #89b4fa;
 }
@@ -108,14 +94,22 @@ window#waybar {
     animation: blink 1s linear infinite;
 }
 
+/* ── Network — Kali style ────────────────────────────────────────── */
 #network {
     color: #89dceb;
+    font-size: 11px;
 }
 
 #network.disconnected {
     color: #f38ba8;
 }
 
+/* ── Backlight ───────────────────────────────────────────────────── */
+#backlight {
+    color: #f9e2af;
+}
+
+/* ── Audio ───────────────────────────────────────────────────────── */
 #pulseaudio {
     color: #cba6f7;
 }
@@ -124,6 +118,7 @@ window#waybar {
     color: #6c7086;
 }
 
+/* ── Battery ─────────────────────────────────────────────────────── */
 #battery {
     color: #a6e3a1;
 }
@@ -134,12 +129,15 @@ window#waybar {
 
 #battery.critical {
     color: #f38ba8;
+    animation: blink 1s linear infinite;
 }
 
-#battery.charging {
+#battery.charging,
+#battery.plugged {
     color: #a6e3a1;
 }
 
+/* ── Tray ────────────────────────────────────────────────────────── */
 #tray {
     padding: 0 6px;
 }
@@ -153,6 +151,7 @@ window#waybar {
     background: rgba(243, 139, 168, 0.2);
 }
 
+/* ── Power button ────────────────────────────────────────────────── */
 #custom-power {
     color: #f38ba8;
     font-size: 15px;
@@ -165,7 +164,7 @@ window#waybar {
     border-radius: 6px;
 }
 
-/* ── Blink animation (for critical states) ───────────────────────── */
+/* ── Blink animation ─────────────────────────────────────────────── */
 @keyframes blink {
     to {
         color: #f38ba8;
