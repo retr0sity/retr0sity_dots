@@ -65,14 +65,14 @@
 
     // ── CPU ──────────────────────────────────────────────────────
     "cpu": {
-        "format": "󰍛 CPU {usage}%",
+        "format": "󰍛 {usage}%",
         "interval": 3,
         "tooltip-format": "CPU Usage: {usage}%\nLoad: {load}"
     },
 
     // ── Memory ───────────────────────────────────────────────────
     "memory": {
-        "format": " RAM {used:0.1f}G/{total:0.1f}G",
+        "format": " {used:0.1f}G",
         "interval": 5,
         "tooltip-format": "Used: {used:0.2f}G\nAvailable: {avail:0.2f}G\nTotal: {total:0.2f}G"
     },
@@ -80,12 +80,12 @@
     // ── Temperature ──────────────────────────────────────────────
     "temperature": {
         "critical-threshold": 80,
-        "format": " TEMP {temperatureC}°C",
-        "format-critical": " TEMP {temperatureC}°C",
+        "format": " {temperatureC}°C",
+        "format-critical": " {temperatureC}°C",
         "tooltip": true
     },
 
-    // ── Network — Kali style with upload/download speeds ─────────
+    // ── Network — icon + ssid + up/down speeds ───────────────────
     "network": {
         "interval": 2,
         "format-wifi": " {essid}  {bandwidthUpBytes}  {bandwidthDownBytes}",
@@ -100,7 +100,7 @@
     // ── Backlight ─────────────────────────────────────────────────
     "backlight": {
         "device": "amdgpu_bl1",
-        "format": "󰃟 BRIGHT {percent}%",
+        "format": "󰃟 {percent}%",
         "scroll-step": 5,
         "on-scroll-up": "brightnessctl set 5%+",
         "on-scroll-down": "brightnessctl set 5%-",
@@ -109,8 +109,8 @@
 
     // ── Audio ────────────────────────────────────────────────────
     "pulseaudio": {
-        "format": "󰕾 VOL {volume}%",
-        "format-muted": "󰖁 MUTED",
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 muted",
         "format-icons": {
             "headphone": "󰋋",
             "headset": "󰋎",
@@ -127,9 +127,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} BAT {capacity}%",
-        "format-charging": "󰂄 CHR {capacity}%",
-        "format-plugged": "󰚥 FULL {capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip-format": "Status: {timeTo}\nCycles: {cycles}\nHealth: {health}%"
     },
