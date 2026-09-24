@@ -33,11 +33,11 @@
 | Notifications | `dunst` |
 | Wallpaper | `swaybg` |
 | Logout Menu | `wlogout` |
-| File Manager | `dolphin` |
+| File Manager | `thunar` |
 | Bluetooth | `blueman` |
 | Screenshots | `grimblast` |
 | Clipboard | `cliphist` + `wl-clipboard` |
-| Network TUI | `nmtui` (via `nmtui-dark` wrapper) |
+| Network TUI | `nmtui` (inline with custom dark colors) |
 | Brightness OSD | `brightnessctl` + `swayosd` |
 | Auth Agent | `polkit-gnome` |
 
@@ -87,7 +87,7 @@ papirus-icon-theme
 
 ### Optional but recommended
 ```
-dolphin firefox blueman network-manager-applet
+thunar firefox blueman network-manager-applet
 tlp kvantum qt6ct zsh oh-my-zsh
 ```
 
@@ -182,7 +182,7 @@ nano ~/.config/hypr/hyprland.conf  # update monitor= line
 |-----|--------|
 | `Super + Space` | App launcher (wofi) |
 | `Super + B` | Firefox |
-| `Super + E` | Dolphin file manager |
+| `Super + E` | Thunar file manager |
 | `Super + N` | Network manager (nmtui) |
 | `Super + D` | Discord |
 | `Super + M` | Spotify |
@@ -255,7 +255,6 @@ monitor=HDMI-A-1,1920x1080@60,1920x0,1
 - Battery management via `tlp` recommended for laptops
 - GTK dark mode enforced via `gsettings` and environment variables
 - Firefox dark mode must be set manually via `about:addons → Themes → Dark`
-- `nmtui-dark` is a wrapper script installed to `~~/.local/bin/` — it launches nmtui with better contrast
 - Wallpaper is set via `swaybg` — place your image at `~/Pictures/wall.png` or update the path in `hyprland.conf`
 
 ## 📄 License

@@ -34,7 +34,7 @@ pamac install --no-confirm \
     wl-clipboard cliphist grim slurp polkit-gnome playerctl \
     ttf-jetbrains-mono-nerd noto-fonts noto-fonts-emoji \
     papirus-icon-theme blueman network-manager-applet \
-    qt6ct kvantum tlp dolphin firefox brightnessctl \
+    qt6ct kvantum tlp thunar firefox brightnessctl \
     grimblast-git bibata-cursor-theme wlogout swayosd-git swayosd-git 2>/dev/null || \
 sudo pacman -Syu --needed --noconfirm \
     hyprland swaybg xdg-desktop-portal-hyprland \
@@ -43,7 +43,7 @@ sudo pacman -Syu --needed --noconfirm \
     wl-clipboard cliphist grim slurp polkit-gnome playerctl \
     ttf-jetbrains-mono-nerd noto-fonts noto-fonts-emoji \
     papirus-icon-theme blueman network-manager-applet \
-    qt6ct kvantum tlp dolphin firefox
+    qt6ct kvantum tlp thunar firefox
 print_ok "Packages installed"
 
 # ── Services ──────────────────────────────────────────────────────
@@ -91,14 +91,3 @@ echo ""
 echo -e "${GREEN}  Done! Log into Hyprland from your display manager.${NC}"
 echo ""
 
-# ── nmtui-dark wrapper ────────────────────────────────────────────
-print_step "Installing nmtui-dark wrapper..."
-mkdir -p "$HOME/.local/bin"
-cat > "$HOME/.local/bin/nmtui-dark" << 'NMTUIEOF'
-#!/bin/bash
-TERM=xterm-256color nmtui
-NMTUIEOF
-chmod +x "$HOME/.local/bin/nmtui-dark"
-grep -q "local/bin" "$HOME/.zshrc" 2>/dev/null || echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.zshrc"
-grep -q "local/bin" "$HOME/.bashrc" 2>/dev/null || echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
-print_ok "nmtui-dark installed"
